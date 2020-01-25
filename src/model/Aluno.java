@@ -38,16 +38,54 @@ package model;
 	public void setMedia(Double media) {
 		this.media = media;
 	}
+	
+	
+	
 //herança(metodo igual ao da classe de cima).Estamos sobrescrevendo o metodo do usuario
 //Sobrescrita só acontece em herança.
 //Sobrescrita (prevalece o de baixo da herança)
 //agora tenho mais acesso tecnica/polimorfismo
 
-	@Override
-	public String retornoAcesso() {
-		setAcesso("total");
-		return getAcesso();
+	public Integer getIdAluno() {
+		return idAluno;
 	}
+
+	public void setIdAluno(Integer idAluno) {
+		this.idAluno = idAluno;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(String disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public String getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
+	}
+
+	public Double getNota1() {
+		return nota1;
+	}
+
+//	public String retornoAcesso() {
+//		setAcesso("total");
+//		return getAcesso();
+//	}
 
 //calculo= logica
 	public void gerarMedia() {
@@ -58,7 +96,7 @@ package model;
 	public static void main(String[] args) {
 		// Rodando pela herança
 		Aluno a = new Aluno();
-		a.setCodigo(10);
+		a.setIdAluno(10);
 		a.setNome("soneca");
 		a.setDisciplina("java");
 		a.setNota1(5.);
@@ -66,7 +104,7 @@ package model;
 		a.gerarMedia();
 		// syso+ctrl+espaço+enter
 		System.out.println(a.getNome() + "\n" + a.getDisciplina() + "\n" + a.getMedia());
-		System.out.println("Acesso do Aluno: " + a.retornoAcesso());
+//		System.out.println("Acesso do Aluno: " + a.retornoAcesso());
 		// Rodando pela SuperClasse
 		System.out.println("SuperClasse");
 		Usuario u = new Usuario();
@@ -77,14 +115,14 @@ package model;
 		// Superclasse SubClasse Sobrescrita
 		// classe(superclasse)chama a SubClasse...
 		
-		Usuario x = new Aluno();
+		Aluno x = new Aluno();
 		x.setNome("luis");
 		// o valor de baixo,do Aluno
-		System.out.println(x.getNome() + ",acesso:" + x.retornoAcesso());
+//		System.out.println(x.getNome() + ",acesso:" + x.retornoAcesso());
 		
 		Usuario a1 = new Usuario();// superclasse pode
 		Aluno a2 = new Aluno();// pode heranca
-		Usuario a3 = new Aluno();// subrescrita pode
+//		Usuario a3 = new Aluno();// subrescrita pode
 
 		// Aluno a4 = new Usuario();//invençaõ (não pode)
 
